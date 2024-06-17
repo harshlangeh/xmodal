@@ -1,0 +1,9 @@
+.head{
+    height: 10vh;
+    width: auto;
+    background-color: black;
+    color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

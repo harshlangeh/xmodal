@@ -1,0 +1,30 @@
+/* Services.css */
+.services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Align items vertically */
+    margin-top: 50px;
+}
+
+.service {
+    text-align: center;
+    padding: 20px;
+    width: 30%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service h2 {
+    color: #0073e6;
+}
+
+.service p {
+    color: #666;
+}
+
+.icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #0073e6;
+}

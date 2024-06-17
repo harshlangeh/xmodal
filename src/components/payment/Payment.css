@@ -1,0 +1,16 @@
+.payment {
+    height: 10vh;
+    width: 100vw;
+    background-color: antiquewhite;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    height: 7vh;
+    width: 10vw;
+    background-color: antiquewhite;
+}
