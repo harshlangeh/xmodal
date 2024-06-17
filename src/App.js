@@ -34,9 +34,9 @@ function App() {
       return;
     }
 
-    // Close the modal if all fields are valid
+
     setIsOpen(false);
-    // Reset the form fields
+
     setUsername('');
     setEmail('');
     setDob('');
@@ -58,11 +58,18 @@ function App() {
   return (
     <div className="App">
 
-      <button onClick={() => setIsOpen(true)}>Open Form</button>
+      <div className='openformdiv'>
+
+        <h1>User Form</h1>
+
+      <button className='openform' onClick={() => setIsOpen(true)}>Open Form</button>
+
+      </div>
+
 
 
       {isOpen && (
-        <div className="modal" onClick={()=>handleClickOutside}>
+        <div className="modal" onClick={handleClickOutside}>
           <div className="modal-content">
             <form onSubmit={handleSubmit}>
               <div>
@@ -96,7 +103,7 @@ function App() {
                 <label htmlFor="phone">Phone Number:</label>
                 <input
                   id="phone"
-                  type="text"
+                  type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
