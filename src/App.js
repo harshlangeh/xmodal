@@ -18,13 +18,29 @@ const App = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.username) newErrors.username = 'Username is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    if (formData.email && !formData.email.includes('@')) newErrors.email = 'Invalid email. Please check your email address.';
-    if (!formData.phone) newErrors.phone = 'Phone number is required';
-    if (formData.phone && !/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Invalid phone number. Please enter a 10-digit phone number.';
-    if (!formData.dob) newErrors.dob = 'Date of birth is required';
-    if (formData.dob && new Date(formData.dob) > new Date()) newErrors.dob = 'Invalid date of birth. Please enter a past date.';
+
+    if (!formData.username) {
+      newErrors.username = 'Username is required';
+    } else {
+      if (!formData.email) {
+        newErrors.email = 'Email is required';
+      } else if (!formData.email.includes('@')) {
+        newErrors.email = 'Invalid email. Please check your email address.';
+      }
+
+      if (!formData.phone) {
+        newErrors.phone = 'Phone number is required';
+      } else if (!/^\d{10}$/.test(formData.phone)) {
+        newErrors.phone = 'Invalid phone number. Please enter a 10-digit phone number.';
+      }
+
+      if (!formData.dob) {
+        newErrors.dob = 'Date of birth is required';
+      } else if (new Date(formData.dob) > new Date()) {
+        newErrors.dob = 'Invalid date of birth. Please enter a past date.';
+      }
+    }
+
     return newErrors;
   };
 
@@ -101,7 +117,6 @@ const App = () => {
 };
 
 export default App;
-
 
 
 
