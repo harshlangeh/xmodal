@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import './App.css'; // Make sure to create this CSS file for styling
+import './App.css'; // Ensure you have this CSS file for styling
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -99,7 +98,6 @@ const App = () => {
 };
 
 export default App;
-
 
 
 
