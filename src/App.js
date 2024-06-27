@@ -18,26 +18,41 @@ const App = () => {
 
   const validate = () => {
     const newErrors = {};
-
+    
     if (!formData.username) {
       newErrors.username = 'Username is required';
-    } else {
+      alert(newErrors.username);
+    }
+    if (formData.username) {
       if (!formData.email) {
         newErrors.email = 'Email is required';
-      } else if (!formData.email.includes('@')) {
-        newErrors.email = 'Invalid email. Please check your email address.';
+        alert(newErrors.email);
       }
-
+      if (formData.email) {
+        if (!formData.email.includes('@')) {
+          newErrors.email = 'Invalid email. Please check your email address.';
+          alert(newErrors.email);
+        }
+      }
       if (!formData.phone) {
         newErrors.phone = 'Phone number is required';
-      } else if (!/^\d{10}$/.test(formData.phone)) {
-        newErrors.phone = 'Invalid phone number. Please enter a 10-digit phone number.';
+        alert(newErrors.phone);
       }
-
+      if (formData.phone) {
+        if (!/^\d{10}$/.test(formData.phone)) {
+          newErrors.phone = 'Invalid phone number. Please enter a 10-digit phone number.';
+          alert(newErrors.phone);
+        }
+      }
       if (!formData.dob) {
         newErrors.dob = 'Date of birth is required';
-      } else if (new Date(formData.dob) > new Date()) {
-        newErrors.dob = 'Invalid date of birth. Please enter a past date.';
+        alert(newErrors.dob);
+      }
+      if (formData.dob) {
+        if (new Date(formData.dob) > new Date()) {
+          newErrors.dob = 'Invalid date of birth. Please enter a past date.';
+          alert(newErrors.dob);
+        }
       }
     }
 
@@ -49,9 +64,6 @@ const App = () => {
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      for (let key in validationErrors) {
-        alert(validationErrors[key]);
-      }
     } else {
       setErrors({});
       setIsModalOpen(false);
@@ -117,9 +129,6 @@ const App = () => {
 };
 
 export default App;
-
-
-
 
 
 
